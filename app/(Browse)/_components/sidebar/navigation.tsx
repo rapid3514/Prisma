@@ -24,7 +24,7 @@ const Navigation = () => {
               <SidebarMenuButton asChild isActive={item.route === pathname}>
                 <Link href={item.route}>
                   <item.icon />
-                  <span>{item.title}</span>
+                  <span>{item.title}.</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
