@@ -11,7 +11,7 @@ import Navigation from "./navigation"
 import Following from "./following"
 import Recommended from "./recommended"
 import Link from "next/link"
-import { ChevronUp, CircleGauge, User2 } from "lucide-react"
+import { ChevronUp, User2 } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function AppSidebar() {
