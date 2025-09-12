@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
 
     if(eventType === 'user.created'){
       if(!evt.data.username || evt.data.username.trim() === ""){
-        return new Response("Username is required", {status: 400})
+        return new Response("Username is requiredd", {status: 400})
       }
       await db.user.create({
         data: {
