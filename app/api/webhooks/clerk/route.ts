@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       await db.user.create({
         data: {
           clerkId: evt.data.id,
-          username: evt.data.username,
+          userName: evt.data.username,
           avatar: evt.data.image_url,
           fullName: `${evt.data.first_name} ${evt.data.last_name}`,
           bio: "Bio is not provided",
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
         where: {clerkId: evt.data.id},
         data:{
           clerkId: evt.data.id,
-          username: evt.data.username || "default_username",
+          userName: evt.data.username || "default_username",
           avatar: evt.data.image_url,
           fullName: `${evt.data.first_name} ${evt.data.last_name}`,
           bio: "Bio is not provided",
