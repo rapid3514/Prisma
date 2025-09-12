@@ -1,7 +1,8 @@
+
+
 import { db } from "@/lib/db";
 import { verifyWebhook } from "@clerk/nextjs/webhooks";
 import { NextRequest } from "next/server";
-
 export async function POST(req: NextRequest) {
   try {
     const evt = await verifyWebhook(req);
@@ -17,9 +18,9 @@ export async function POST(req: NextRequest) {
         return new Response("Username is required", { status: 400 });
       }
       await db.user.create({
-        data: {
-          clerkId: evt.data.id,
-          username: evt.data.username,
+  data: {
+          clerkId:evt.data.id,
+          userName:evt.data.username,
           avatar: evt.data.image_url,
           fullName:` ${evt.data.first_name} ${evt.data.last_name}`,
           bio: "Bio is not provided!!!",
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
       await db.user.update({
         where: { clerkId: evt.data.id },
         data: {
-          username: evt.data.username || "default_username",
+          userName:evt.data.username || undefined,
           avatar: evt.data.image_url,
           fullName:` ${evt.data.first_name} ${evt.data.last_name}`,
           bio: "Bio is not provided!!!",
@@ -49,3 +50,4 @@ export async function POST(req: NextRequest) {
     return new Response("Error verifying webhook", { status: 400 });
   }
 }
+
