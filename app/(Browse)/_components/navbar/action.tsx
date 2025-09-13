@@ -12,7 +12,7 @@ const Action = () => {
         <SidebarTrigger/>
         <SignedOut>
              <SignInButton>
-              <Button size={'sm'}>
+              <Button variant={'outline'} size={'sm'}>
                 <span className='max-w-md'>SignIn</span>
                 <LogIn/>
               </Button>
